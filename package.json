@@ -1,0 +1,32 @@
+{
+  "name": "api-node-express",
+  "version": "0.0.0",
+  "description": "API Back-end NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -e ejs js css server.js",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuizzFellipe/api-node-express.git"
+  },
+  "keywords": [
+    "API",
+    "NodeJS",
+    "Express",
+    "JavaScript"
+  ],
+  "author": "Luiz Fellipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuizzFellipe/api-node-express/issues"
+  },
+  "homepage": "https://github.com/LuizzFellipe/api-node-express#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
