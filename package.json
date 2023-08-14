@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "API Back-end NodeJS",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js"
