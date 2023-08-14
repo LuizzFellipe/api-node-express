@@ -5,7 +5,7 @@ import userRouter from './routes/userRouter.js';
 const api = express();
 const  port = 3000;
 
-api.get('/home', (req, res) => {
+api.get('/', (req, res) => {
     res.json({message: "Aqui é o home, sera exibido a pagina para você"});
 });
 
