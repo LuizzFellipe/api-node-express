@@ -1,16 +1,17 @@
 import express from 'express'
+import getUser from '../controllers/user/getUser.js';
+import postUser from '../controllers/user/postUser.js';
+import putUser from '../controllers/user/putUser.js';
+import deleteUser from '../controllers/user/deleteUser.js';
+
 const router = express.Router();
 
-router.post('/cadastro', (req, res) => {
-    res.json({message: "Aqui é o cadastro, você coloca as informações do produtos"});
-});
+router.get('/', getUser);
 
-router.put('/produtos', (req, res) => {
-    res.json({message: "Aqui é seu produto, você pode adicionar os seus produtos no carrinho"});
-});
+router.post('/cadastro', postUser);
 
-router.delete('/carrinho', (req, res) => {
-    res.json({message: "Aqui é o seu carrinho, você pode apagar o seu produtos"});
-});
+router.put('/produtos', putUser);
+
+router.delete('/carrinho', deleteUser);
 
 export default router;
