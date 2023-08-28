@@ -6,7 +6,6 @@ const getById = async (id) => {
 
 const postById = async () => {
     return await db.query("INSERT INTO users (id, nome, email, senha) VALUES (?, ?, ?, ?")
-    
 };
 
 export default {getById, postById};
