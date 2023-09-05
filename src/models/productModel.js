@@ -18,8 +18,8 @@ const update = async (user) => {
     return await db.query("UPDATE product SET marca = ?, modelo = ?, preco = ? WHERE id = ?", [marca, modelo, preco, id])
 };
 
-// const remove = async (id) => {
-//     return await db.query("DELETE FROM product WHERE id = ?", [id])
-// };
+const remove = async (id) => {
+    return await db.query("DELETE FROM product WHERE id = ?", [id])
+};
 
-export default {product, productAll, insert, update};
+export default {product, productAll, insert, update, remove};
