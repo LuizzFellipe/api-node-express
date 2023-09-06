@@ -5,8 +5,6 @@ import putUser from '../controllers/user/putUser.js';
 import deleteUser from '../controllers/user/deleteUser.js';
 import getListUser from '../controllers/user/listUser.js'
 
-
-
 const router = express.Router();
 
 router.get('/', getUser);
