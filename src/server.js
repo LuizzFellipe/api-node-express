@@ -10,6 +10,10 @@ const api = express();
 
 api.use(bodyParser.json());
 
+api.get('/', (req, res) => {
+    res.json('Bem-Vindo Usuário')
+});
+
 api.use('/user', userRouter);
 
 api.use('/auth', loginRouter);
