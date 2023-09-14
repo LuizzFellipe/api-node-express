@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import userRouter from './routes/userRouter.js';
 import loginRouter from './routes/loginRouter.js';
 import productRouter from './routes/productRouter.js';
-import {PORT} from './config.js';
+import { PORT } from './config.js';
 
 const api = express();
 

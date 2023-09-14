@@ -9,12 +9,12 @@ const productAll = async () => {
 };
 
 const insert = async (user) => {
-    const {marca, modelo, preco} = user
+    const { marca, modelo, preco } = user
     return await db.query("INSERT INTO product ( marca, modelo, preco) VALUES ( ?, ?, ?);", [marca, modelo, preco])
 };
 
 const update = async (user) => {
-    const {id, marca, modelo, preco} = user
+    const { id, marca, modelo, preco } = user
     return await db.query("UPDATE product SET marca = ?, modelo = ?, preco = ? WHERE id = ?", [marca, modelo, preco, id])
 };
 
@@ -22,4 +22,4 @@ const remove = async (id) => {
     return await db.query("DELETE FROM product WHERE id = ?", [id])
 };
 
-export default {product, productAll, insert, update, remove};
+export default { product, productAll, insert, update, remove };

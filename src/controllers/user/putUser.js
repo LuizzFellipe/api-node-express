@@ -6,16 +6,16 @@ const putUser = async (req, res) => {
         const [result] = await user.update(userData)
         if (result.affectedRows === 1) {
             res.json({
-                success : "Usuário atualizado com Sucesso!",
-                user : {
+                success: "Usuário atualizado com Sucesso!",
+                user: {
                     ...userData
                 }
             })
         };
     } catch (err) {
         console.log(err)
-        res.status(500).json ({
-            error : 'Erro no Servido!'
+        res.status(500).json({
+            error: 'Erro no Servido!'
         });
     };
 };

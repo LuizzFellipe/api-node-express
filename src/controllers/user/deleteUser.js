@@ -6,13 +6,13 @@ const deleteUser = async (req, res) => {
         const [result] = await user.remove(userData.id)
         if (result.affectedRows === 1) {
             res.json({
-                success :"Usuário Apagado com Sucesso!"
+                success: "Usuário Apagado com Sucesso!"
             })
         }
     } catch (err) {
         console.log(err)
-        res.status(500).json ({
-            error : 'Erro no Servido!'
+        res.status(500).json({
+            error: 'Erro no Servido!'
         });
     }
 };

@@ -1,4 +1,4 @@
-import express  from "express";
+import express from "express";
 import login from '../controllers/cadastro/insertLogin.js';
 import logout from '../controllers/cadastro/insertLogout.js';
 
