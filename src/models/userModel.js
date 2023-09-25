@@ -1,7 +1,7 @@
 import db from '../database/db.js';
 
 const getById = async (id) => {
-    return await db.query("SELECT nome, email FROM users WHERE id = ?", [id])
+    return await db.query("SELECT * FROM users WHERE id = ?", [id])
 };
 
 const getAll = async () => {
@@ -9,13 +9,13 @@ const getAll = async () => {
 };
 
 const insert = async (user) => {
-    const { name, email, senha } = user
-    return await db.query("INSERT INTO users ( nome, email, senha) VALUES ( ?, ?, ?);", [name, email, senha])
+    const { name, email, senha, photo } = user
+    return await db.query("INSERT INTO users ( nome, email, senha, photo) VALUES ( ?, ?, ?, ?);", [name, email, senha, photo])
 };
 
 const update = async (user) => {
-    const { id, nome, email, senha } = user
-    return await db.query("UPDATE users SET nome = ?, email = ?, senha = ? WHERE id = ?", [nome, email, senha, id])
+    const { id, nome, email, senha, photo } = user
+    return await db.query("UPDATE users SET nome = ?, email = ?, senha = ?, photo = ? WHERE id = ?", [nome, email, senha, id, photo])
 };
 
 const remove = async (id) => {
