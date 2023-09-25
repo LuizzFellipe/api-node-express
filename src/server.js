@@ -1,5 +1,6 @@
 import express from 'express';
-import bodyParser from 'body-parser'
+import bodyParser from 'body-parser';
+import corsOptions from 'cors';
 
 import userRouter from './routes/userRouter.js';
 import loginRouter from './routes/loginRouter.js';
@@ -8,7 +9,9 @@ import { PORT } from './config.js';
 
 const api = express();
 
+api.use(corsOptions())
 api.use(bodyParser.json());
+
 
 api.get('/', (req, res) => {
     res.json('Bem-Vindo Usuário')

@@ -5,7 +5,7 @@ const getById = async (id) => {
 };
 
 const getAll = async () => {
-    return await db.query("SELECT id, nome, email FROM users")
+    return await db.query("SELECT * FROM users")
 };
 
 const insert = async (user) => {
