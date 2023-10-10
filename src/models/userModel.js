@@ -9,13 +9,13 @@ const getAll = async () => {
 };
 
 const insert = async (user) => {
-    const { name, email, senha, photo } = user
-    return await db.query("INSERT INTO users ( nome, email, senha, photo) VALUES ( ?, ?, ?, ?);", [name, email, senha, photo])
+    const { nome, email, senha, photo } = user
+    return await db.query("INSERT INTO users ( nome, email, senha, photo) VALUES ( ?, ?, ?, ?);", [nome, email, senha, photo])
 };
 
 const update = async (user) => {
-    const { id, nome, email, senha, photo } = user
-    return await db.query("UPDATE users SET nome = ?, email = ?, senha = ?, photo = ? WHERE id = ?", [nome, email, senha, id, photo])
+    const { id, nome, email, photo } = user
+    return await db.query("UPDATE users SET nome = ?, email = ?, photo = ? WHERE id = ?", [nome, email, photo, id])
 };
 
 const remove = async (id) => {

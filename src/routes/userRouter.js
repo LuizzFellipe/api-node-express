@@ -16,4 +16,4 @@ router.put('/atualizar', putUser);
 
 router.delete('/apagar', deleteUser);
 
-export default router;
+export default router; 
