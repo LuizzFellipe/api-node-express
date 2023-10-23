@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Set-2023 às 20:45
+-- Tempo de geração: 23-Out-2023 às 22:14
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.0.13
 
@@ -48,6 +48,18 @@ INSERT INTO `product` (`id`, `modelo`, `marca`, `preco`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `token` varchar(300) COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `users`
 --
 
@@ -64,11 +76,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nome`, `email`, `senha`, `photo`) VALUES
-(1, 'Luiz', 'luiz@gmail.com', '124234', 'https://i.pinimg.com/736x/a0/5a/1d/a05a1d8ce76262357f6ea2a9db72a371.jpg'),
-(2, 'Maria Luiza', 'marialuiza@gmail.com', '56789', 'https://image-service.onefootball.com/transform?w=280&h=210&dpr=2&image=https%3A%2F%2Fwp-images.onefootball.com%2Fwp-content%2Fuploads%2Fsites%2F12%2F2023%2F06%2FBrazil-v-Guinea-International-Friendly-1687051939-1000x667.jpg'),
-(3, 'Pedro', 'henrique@gmail.com', '12345', 'https://i.pinimg.com/736x/cf/36/e8/cf36e83ffe707345195fb1234266406f.jpg'),
-(9, 'Annita', 'annita@gmail.com', '564564', 'https://i.pinimg.com/736x/e4/fc/53/e4fc53e4d84f84734bc93883bf194630.jpg'),
-(10, 'Gabriel Martinelli', 'gabrielmartinelli@gmail.com', '12312312', 'https://i.pinimg.com/736x/ce/66/ec/ce66ecff0f21b86022ec46d002aae106.jpg');
+(18, 'Anne', 'anne@gmail.com', '12345', 'https://i.pinimg.com/originals/fd/ce/58/fdce58d944bd8b9b6faf860958c96691.jpg'),
+(19, 'Leandro', 'leandro@gamilc.om', '12345', 'https://i.pinimg.com/236x/6a/b6/ea/6ab6ea307df8cba834425ac77912ca71.jpg'),
+(21, 'Annita', 'annita@gmail.com', '12345', 'https://i.pinimg.com/originals/fd/ce/58/fdce58d944bd8b9b6faf860958c96691.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -79,6 +89,14 @@ INSERT INTO `users` (`id`, `nome`, `email`, `senha`, `photo`) VALUES
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `index_token` (`token`) USING BTREE,
+  ADD KEY `id_user_user_id` (`id`) USING BTREE;
 
 --
 -- Índices para tabela `users`
@@ -97,10 +115,16 @@ ALTER TABLE `product`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT de tabela `sessions`
+--
+ALTER TABLE `sessions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
